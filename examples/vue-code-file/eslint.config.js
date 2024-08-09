@@ -1,13 +1,17 @@
+import vueParser from 'vue-eslint-parser';
 import js from '@eslint/js';
 import * as graphql from '@graphql-eslint/eslint-plugin';
 
 export default [
   {
-    files: ['**/*.js'],
+    files: ['**/*.js', '**/*.vue'],
     processor: graphql.processors.graphql,
-    rules: {
-      ...js.configs.recommended.rules,
-      'no-console': 'error',
+    rules: js.configs.recommended.rules,
+  },
+  {
+    files: ['**/*.vue'],
+    languageOptions: {
+      parser: vueParser,
     },
   },
   {
@@ -20,6 +24,7 @@ export default [
     },
     rules: {
       '@graphql-eslint/no-anonymous-operations': 'error',
+      '@graphql-eslint/no-duplicate-fields': 'error',
       '@graphql-eslint/naming-convention': [
         'error',
         {
