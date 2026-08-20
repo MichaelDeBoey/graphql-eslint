@@ -53,7 +53,11 @@ const RootLayout: FC<{
             icon: <PaperIcon />,
             children: 'Documentation',
           },
-          { href: 'https://the-guild.dev/graphql/hive/blog', icon: <PencilIcon />, children: 'Blog' },
+          {
+            href: 'https://the-guild.dev/graphql/hive/blog',
+            icon: <PencilIcon />,
+            children: 'Blog',
+          },
           {
             href: 'https://github.com/graphql-hive/graphql-eslint',
             icon: <GitHubIcon />,
